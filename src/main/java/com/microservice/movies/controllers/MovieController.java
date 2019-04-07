@@ -24,6 +24,11 @@ public class MovieController {
 		return new ResponseEntity<>(movieService.getMovies(), HttpStatus.OK);
 	}
 	
+	@GetMapping
+	public ResponseEntity<String> hello() {
+		return new ResponseEntity<>("Hello", HttpStatus.OK);
+	}
+	
 	@PostMapping("/movie")
 	public ResponseEntity<Void> createMovie(@RequestBody MovieDto movie){
 		this.movieService.createMovie(movie);
